@@ -1,0 +1,333 @@
+{
+  "categories": [
+    { "id": 1, "name": "Groceries", "color": "#2E7D32" },
+    { "id": 2, "name": "Rent", "color": "#455A64" },
+    { "id": 3, "name": "Salary", "color": "#1565C0" },
+    { "id": 4, "name": "Transport", "color": "#EF6C00" },
+    { "id": 5, "name": "Dining out", "color": "#C62828" },
+    { "id": 6, "name": "Utilities", "color": "#00838F" },
+    { "id": 7, "name": "Entertainment", "color": "#7B1FA2" },
+    { "id": 8, "name": "Freelance", "color": "#6D4C41" },
+    { "id": 9, "name": "Shopping", "color": "#AD1457" },
+    { "id": 10, "name": "Travel", "color": "#F9A825" },
+    { "id": 11, "name": "Gifts", "color": "#9E9D24" }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": "2450.00",
+      "date": "2026-08-01",
+      "description": "August salary",
+      "category_id": 3
+    },
+    {
+      "id": 2,
+      "type": "expense",
+      "amount": "850.00",
+      "date": "2026-08-02",
+      "description": "Monthly rent",
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "amount": "62.35",
+      "date": "2026-08-04",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "type": "expense",
+      "amount": "49.90",
+      "date": "2026-08-05",
+      "description": "Monthly train pass",
+      "category_id": 4
+    },
+    {
+      "id": 5,
+      "type": "expense",
+      "amount": "38.50",
+      "date": "2026-08-08",
+      "description": "Pizza with friends",
+      "category_id": 5
+    },
+    {
+      "id": 6,
+      "type": "expense",
+      "amount": "1640.00",
+      "date": "2026-08-10",
+      "description": "Summer holiday apartment",
+      "category_id": 10
+    },
+    {
+      "id": 7,
+      "type": "expense",
+      "amount": "71.20",
+      "date": "2026-08-12",
+      "description": "Electricity bill",
+      "category_id": 6
+    },
+    {
+      "id": 8,
+      "type": "expense",
+      "amount": "54.80",
+      "date": "2026-08-15",
+      "description": null,
+      "category_id": 1
+    },
+    {
+      "id": 9,
+      "type": "income",
+      "amount": "320.00",
+      "date": "2026-08-20",
+      "description": "Logo design project",
+      "category_id": 8
+    },
+    {
+      "id": 10,
+      "type": "expense",
+      "amount": "24.99",
+      "date": "2026-08-22",
+      "description": "Cinema tickets",
+      "category_id": 7
+    },
+    {
+      "id": 11,
+      "type": "expense",
+      "amount": "58.45",
+      "date": "2026-08-29",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 12,
+      "type": "expense",
+      "amount": "45.10",
+      "date": "2026-10-03",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 13,
+      "type": "income",
+      "amount": "2450.00",
+      "date": "2026-09-01",
+      "description": "September salary",
+      "category_id": 3
+    },
+    {
+      "id": 14,
+      "type": "expense",
+      "amount": "850.00",
+      "date": "2026-09-02",
+      "description": "Monthly rent",
+      "category_id": 2
+    },
+    {
+      "id": 15,
+      "type": "expense",
+      "amount": "47.80",
+      "date": "2026-09-05",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 16,
+      "type": "expense",
+      "amount": "49.90",
+      "date": "2026-09-05",
+      "description": "Monthly train pass",
+      "category_id": 4
+    },
+    {
+      "id": 17,
+      "type": "expense",
+      "amount": "64.30",
+      "date": "2026-09-11",
+      "description": "Birthday dinner",
+      "category_id": 5
+    },
+    {
+      "id": 18,
+      "type": "expense",
+      "amount": "68.75",
+      "date": "2026-09-12",
+      "description": "Electricity bill",
+      "category_id": 6
+    },
+    {
+      "id": 19,
+      "type": "expense",
+      "amount": "52.15",
+      "date": "2026-09-19",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 20,
+      "type": "expense",
+      "amount": "45.00",
+      "date": "2026-09-20",
+      "description": "Concert ticket",
+      "category_id": 7
+    },
+    {
+      "id": 21,
+      "type": "income",
+      "amount": "540.00",
+      "date": "2026-09-24",
+      "description": "Website update for a client",
+      "category_id": 8
+    },
+    {
+      "id": 22,
+      "type": "expense",
+      "amount": "61.40",
+      "date": "2026-09-26",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 23,
+      "type": "expense",
+      "amount": "12.90",
+      "date": "2026-09-28",
+      "description": "Streaming subscription",
+      "category_id": 7
+    },
+    {
+      "id": 24,
+      "type": "expense",
+      "amount": "33.20",
+      "date": "2026-09-30",
+      "description": "Lunch with colleagues",
+      "category_id": 5
+    },
+    {
+      "id": 25,
+      "type": "income",
+      "amount": "2450.00",
+      "date": "2026-10-01",
+      "description": "October salary",
+      "category_id": 3
+    },
+    {
+      "id": 26,
+      "type": "expense",
+      "amount": "850.00",
+      "date": "2026-10-02",
+      "description": "Monthly rent",
+      "category_id": 2
+    },
+    {
+      "id": 27,
+      "type": "expense",
+      "amount": "49.90",
+      "date": "2026-10-05",
+      "description": "Monthly train pass",
+      "category_id": 4
+    },
+    {
+      "id": 28,
+      "type": "expense",
+      "amount": "0.10",
+      "date": "2026-10-06",
+      "description": "Parking meter",
+      "category_id": 4
+    },
+    {
+      "id": 29,
+      "type": "expense",
+      "amount": "0.20",
+      "date": "2026-10-06",
+      "description": "Parking meter",
+      "category_id": 4
+    },
+    {
+      "id": 30,
+      "type": "expense",
+      "amount": "89.60",
+      "date": "2026-10-09",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 31,
+      "type": "expense",
+      "amount": "42.75",
+      "date": "2026-10-10",
+      "description": "Sushi takeaway",
+      "category_id": 5
+    },
+    {
+      "id": 32,
+      "type": "expense",
+      "amount": "73.40",
+      "date": "2026-10-12",
+      "description": "Electricity bill",
+      "category_id": 6
+    },
+    {
+      "id": 33,
+      "type": "expense",
+      "amount": "58.30",
+      "date": "2026-10-16",
+      "description": null,
+      "category_id": 1
+    },
+    {
+      "id": 34,
+      "type": "expense",
+      "amount": "1250.00",
+      "date": "2026-10-17",
+      "description": "New laptop",
+      "category_id": 9
+    },
+    {
+      "id": 35,
+      "type": "expense",
+      "amount": "67.25",
+      "date": "2026-10-23",
+      "description": "Weekly shopping",
+      "category_id": 1
+    },
+    {
+      "id": 36,
+      "type": "expense",
+      "amount": "35.80",
+      "date": "2026-10-24",
+      "description": "Dinner with family",
+      "category_id": 5
+    },
+    {
+      "id": 37,
+      "type": "income",
+      "amount": "410.00",
+      "date": "2026-10-25",
+      "description": "Illustration commission",
+      "category_id": 8
+    },
+    {
+      "id": 38,
+      "type": "expense",
+      "amount": "19.99",
+      "date": "2026-10-25",
+      "description": null,
+      "category_id": 7
+    }
+  ],
+  "budgets": [
+    { "month": "2026-08", "category_id": 1, "amount": "200.00" },
+    { "month": "2026-08", "category_id": 5, "amount": "80.00" },
+    { "month": "2026-09", "category_id": 1, "amount": "200.00" },
+    { "month": "2026-09", "category_id": 5, "amount": "80.00" },
+    { "month": "2026-09", "category_id": 7, "amount": "50.00" },
+    { "month": "2026-10", "category_id": 1, "amount": "200.00" },
+    { "month": "2026-10", "category_id": 4, "amount": "50.20" },
+    { "month": "2026-10", "category_id": 5, "amount": "100.00" },
+    { "month": "2026-10", "category_id": 7, "amount": "30.00" },
+    { "month": "2026-10", "category_id": 11, "amount": "50.00" }
+  ]
+}
