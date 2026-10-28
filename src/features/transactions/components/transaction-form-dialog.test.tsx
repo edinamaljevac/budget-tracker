@@ -82,6 +82,29 @@ describe('adding a transaction', () => {
     )
   })
 
+  it('explains that a category is needed when there are none, and links to the categories', async () => {
+    const user = userEvent.setup()
+    const emptyData: BudgetData = { categories: [], transactions: [], budgets: [] }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(emptyData))
+    const dialog = await openAddDialog(user)
+
+    expect(dialog.getByRole('combobox', { name: 'Category' })).toBeDisabled()
+    expect(dialog.getByText(/A transaction needs a category/)).toBeInTheDocument()
+
+    await user.click(dialog.getByLabelText('Expense'))
+    await user.type(dialog.getByLabelText('Amount (€)'), '10.50')
+    await user.click(dialog.getByRole('button', { name: 'Add transaction' }))
+
+    expect(dialog.getByRole('combobox', { name: 'Category' })).toHaveAccessibleDescription(
+      'Choose a category.',
+    )
+    expect(getSavedTransactions()).toHaveLength(0)
+
+    await user.click(dialog.getByRole('link', { name: 'Add a category' }))
+
+    expect(await screen.findByRole('heading', { name: 'Categories' })).toBeInTheDocument()
+  })
+
   it('saves once when the user double-clicks the button', async () => {
     const user = userEvent.setup()
     const dialog = await openAddDialog(user)

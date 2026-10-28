@@ -1,9 +1,17 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 import { Controller, useForm, type DefaultValues } from 'react-hook-form'
 import { Button } from '@/components/ui/button'
 import { DialogClose, DialogFooter } from '@/components/ui/dialog'
-import { Field, FieldError, FieldLabel, FieldLegend, FieldSet } from '@/components/ui/field'
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
@@ -46,6 +54,7 @@ export function TransactionForm({
   >({ resolver: zodResolver(transactionFormSchema), defaultValues })
   const { errors } = formState
   const sortedCategories = categories.toSorted((a, b) => a.name.localeCompare(b.name))
+  const hasCategories = categories.length > 0
 
   return (
     <form noValidate onSubmit={handleSubmit(onSave)} className="grid gap-5">
@@ -117,7 +126,12 @@ export function TransactionForm({
         render={({ field, fieldState }) => (
           <Field data-invalid={fieldState.invalid}>
             <FieldLabel htmlFor="transaction-category">Category</FieldLabel>
-            <Select name={field.name} value={field.value} onValueChange={field.onChange}>
+            <Select
+              name={field.name}
+              value={field.value}
+              onValueChange={field.onChange}
+              disabled={!hasCategories}
+            >
               <SelectTrigger
                 ref={field.ref}
                 id="transaction-category"
@@ -126,7 +140,9 @@ export function TransactionForm({
                 aria-describedby={fieldState.invalid ? 'transaction-category-error' : undefined}
                 className="w-full"
               >
-                <SelectValue placeholder="Choose a category" />
+                <SelectValue
+                  placeholder={hasCategories ? 'Choose a category' : 'No categories yet'}
+                />
               </SelectTrigger>
               <SelectContent>
                 {sortedCategories.map((category) => (
@@ -141,6 +157,11 @@ export function TransactionForm({
                 ))}
               </SelectContent>
             </Select>
+            {!hasCategories && (
+              <FieldDescription>
+                A transaction needs a category. <Link to="/categories">Add a category</Link> first.
+              </FieldDescription>
+            )}
             <FieldError id="transaction-category-error" errors={[fieldState.error]} />
           </Field>
         )}
