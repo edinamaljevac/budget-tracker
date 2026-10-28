@@ -31,11 +31,18 @@ describe('budget-data.json', () => {
 })
 
 describe('budgetDataSchema', () => {
-  it('rejects fields that are not in the specification', () => {
+  it('ignores fields that are not in the specification', () => {
     const data = {
       ...seedData,
       categories: [{ id: 1, name: 'Groceries', color: '#2E7D32', icon: 'cart' }],
     }
+    expect(budgetDataSchema.parse(data).categories).toEqual([
+      { id: 1, name: 'Groceries', color: '#2E7D32' },
+    ])
+  })
+
+  it('rejects a category without a name', () => {
+    const data = { ...seedData, categories: [{ id: 1, color: '#2E7D32' }] }
     expect(budgetDataSchema.safeParse(data).success).toBe(false)
   })
 

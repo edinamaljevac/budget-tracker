@@ -7,13 +7,13 @@ const amountSchema = z.string().refine(isValidAmount)
 
 export const transactionTypeSchema = z.enum(['income', 'expense'])
 
-const categorySchema = z.strictObject({
+const categorySchema = z.object({
   id: idSchema,
   name: z.string().min(1).max(30),
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
 })
 
-const transactionSchema = z.strictObject({
+const transactionSchema = z.object({
   id: idSchema,
   type: transactionTypeSchema,
   amount: amountSchema,
@@ -22,13 +22,13 @@ const transactionSchema = z.strictObject({
   category_id: idSchema,
 })
 
-const budgetSchema = z.strictObject({
+const budgetSchema = z.object({
   month: z.string().refine(isValidMonth),
   category_id: idSchema,
   amount: amountSchema,
 })
 
-export const budgetDataSchema = z.strictObject({
+export const budgetDataSchema = z.object({
   categories: z.array(categorySchema),
   transactions: z.array(transactionSchema),
   budgets: z.array(budgetSchema),

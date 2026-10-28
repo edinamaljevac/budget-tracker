@@ -4,9 +4,15 @@ import { budgetDataSchema, type BudgetData } from '@/types'
 export const API_DELAY_MS = 500
 export const STORAGE_KEY = 'budget-tracker-data'
 
-const initialData = budgetDataSchema.parse(seedData)
-
 export class StorageError extends Error {}
+
+function readInitialData(): BudgetData {
+  const result = budgetDataSchema.safeParse(seedData)
+  if (!result.success) {
+    throw new Error("The starting data in budget-data.json is not valid, so it can't be loaded.")
+  }
+  return result.data
+}
 
 function parseJson(text: string): unknown {
   try {
@@ -18,7 +24,7 @@ function parseJson(text: string): unknown {
 
 export function readData(): BudgetData {
   const savedData = localStorage.getItem(STORAGE_KEY)
-  if (savedData === null) return structuredClone(initialData)
+  if (savedData === null) return readInitialData()
 
   const result = budgetDataSchema.safeParse(parseJson(savedData))
   if (!result.success) {
@@ -60,5 +66,8 @@ export function assertCategoryExists(data: BudgetData, categoryId: number): void
 }
 
 export function resetData(): Promise<void> {
-  return simulateRequest(() => localStorage.removeItem(STORAGE_KEY))
+  return simulateRequest(() => {
+    readInitialData()
+    localStorage.removeItem(STORAGE_KEY)
+  })
 }
